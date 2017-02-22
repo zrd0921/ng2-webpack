@@ -1,0 +1,15 @@
+<h1>
+	Hello {{name}}
+</h1>
+<a [routerLink]="['/']" routerLinkActive="active">
+ 	首页
+</a>
+<a [routerLink]="['/test']" routerLinkActive="active">
+ 	一级路由测试 （test重定向到test/main ）  
+</a>
+
+<a [routerLink]="['/test/second']" routerLinkActive="active">
+	二级路由测试 （test/second ）  
+</a>
+
+<router-outlet></router-outlet>
