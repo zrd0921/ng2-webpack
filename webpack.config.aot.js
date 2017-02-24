@@ -8,7 +8,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const CompressionPlugin = require("compression-webpack-plugin");
 const ngtools = require('@ngtools/webpack');
 
 let webpackConfig = {
@@ -58,15 +57,6 @@ let webpackConfig = {
 		]),
 		new ngtools.AotPlugin({
 			tsConfigPath: './tsconfig.json',
-			skipMetadataEmit: true,
-			entryModule: 'src/app/app.module#AppModule'
-		}),
-		new CompressionPlugin({
-			asset: "[path].gz[query]",
-			algorithm: "gzip",
-			test: /\.js$|\.html$/,
-			threshold: 10240,
-			minRatio: 0.3
 		}),
 		/**
 		 * 报错继续运行2.0弃用NoErrorsPlugin，改用NoEmitOnErrorsPlugin
@@ -130,7 +120,7 @@ let defaultConfig = {
 	},
 	resolve: {
 		extensions: ['.ts', '.js'],
-		modules: [path.resolve(__dirname, 'node_modules')]
+		modules: [node_modules]
 	},
 	devServer: {
 		contentBase: './',

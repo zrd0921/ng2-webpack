@@ -1,27 +1,35 @@
 {
-  "compilerOptions": {
-    "declaration": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es5",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "baseUrl": "",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2015",
-      "dom"
-    ],
-    "noEmitHelpers": false
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "angularCompilerOptions": {
-    "genDir": "./src/app/ngfactory",
-    "entryModule": ".src/app/app.module#AppModule"
-  }
+	"compileOnSave":false,
+	"compilerOptions": {
+		"watch":true,
+		"declaration": false,
+		"removeComments": true,
+		"noImplicitAny": false ,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"target": "es5",
+		"module": "es2015",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"baseUrl": "",
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"lib": [
+			"es2015",
+			"dom"
+		],
+		"noEmitHelpers": false
+	},
+	"include":[
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules"
+	],
+	"angularCompilerOptions": {
+		"genDir": "./aot",
+		"skipMetadataEmit": true,
+		"entryModule": "./src/app/app.module#AppModule"
+	}
 }
