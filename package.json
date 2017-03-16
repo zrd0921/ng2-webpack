@@ -8,13 +8,14 @@
     "start:aot": "set NODE_ENV=production&& npm run serve:aot",
     "start:os": "export NODE_ENV=development&& npm run serve",
     "start:os:aot": "export NODE_ENV=production&& npm run serve:aot",
-    "serve": "webpack-dev-server --config  webpack.config.dev.js --color --progress --open && npm run lint",
-    "serve:aot": "webpack-dev-server --config  webpack.config.aot.js --color --progress --open",
+    "serve": "npm run lint&& webpack-dev-server --config  webpack.config.dev.js --color --progress",
+    "serve:aot": "npm run lint&& webpack-dev-server --config  webpack.config.aot.js --color --progress",
     "build": "set NODE_ENV=production&& npm run dist",
     "build:os": "export NODE_ENV=production&& npm run dist",
-    "dist": "npm run remove:dist && set NODE_ENV=production&& webpack --config webpack.config.aot.js -p --progress --color",
+    "dist": "npm run remove:dist && webpack --config webpack.config.aot.js -p --progress --color",
     "remove:dist": "rm -rf dist",
-    "lint": "tslint src/**/*.ts --force"
+    "lint": "tslint 'src/**/*.ts' --force",
+    "delete": "find ./src -name '*.js' -delete && find ./src -name '*.map' -delete"
   },
   "author": "deot",
   "license": "MIT",

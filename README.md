@@ -13,4 +13,5 @@ npm run start:os
 npm run start:os:aot
 npm run build:os 
 
+// 当然你也可以考虑使用cross-env
 ```
